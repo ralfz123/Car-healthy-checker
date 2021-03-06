@@ -1,21 +1,20 @@
-<script>
+<script context="module">
   import { endpoint } from './utils/api.js';
 
-  const fetchData = (async () => {
-    const response = await fetch(endpoint);
-    return await response.json();
-  })();
+  // global variable data
+  export let dataGlobal = [];
 
-  // Search exported inputValue in data by correct datakey
-  const findLicenseData = (inputValue, data) => {
-    // if (valueInput == data){
-    // find correct data
-    // }
+  // Fetch data and assign to global variable
+  const fetchData = async () => {
+    const response = await fetch(endpoint);
+    const json = await response.json();
+    dataGlobal = json;
+    return dataGlobal;
   };
 </script>
 
-{#await fetchData}
-  <p>...waiting</p>
+{#await fetchData()}
+  <!-- <p>Loading...</p> -->
 {:then data}
   {#each data as { kenteken }}
     <!-- <p>{kenteken}</p> -->

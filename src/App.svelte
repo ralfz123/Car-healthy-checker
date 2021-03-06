@@ -1,13 +1,16 @@
 <script>
   // import './components/utils/fetch.js'
+  import Header from './components/header/header.svelte';
   import LicensePlateInput from './components/input/input.svelte';
   import Carcheck from './components/carcheck.svelte';
+  import Footer from './components/footer/footer.svelte';
 </script>
 
 <main>
-  <h1>Car Checker</h1>
+  <Header />
   <LicensePlateInput />
   <Carcheck />
+  <Footer />
 </main>
 
 <style>

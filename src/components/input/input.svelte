@@ -1,15 +1,26 @@
 <script>
-  const valueInput = document.querySelector('#inputCar');
-  //   if (valueInput.value > 0) {
-  //     let number = valueInput.value;
-  //   }
+  import { dataGlobal } from '../carcheck.svelte';
 
-  // Search in data for the inputted value
-  function handleClick() {}
+  // Get data from input value
+  function handleClickSearch() {
+    const valueInput = document.querySelector('input').value;
+    const inputData = findLicenseData(valueInput, dataGlobal);
+    // render retrieved input data
+  }
+
+  // Find data object that's linked to input value
+  const findLicenseData = (inputValue, globalData) => {
+    // console.log(globalData);
+    // console.log(inputValue);
+    // if (inputValue == data) {
+    //   // find correct data object with all unique data keys
+    //   // return retrievedData
+    // }
+  };
 </script>
 
-<input type="text" id="inputCar" />
-<button on:click={handleClick}>Search</button>
+<input type="text" />
+<button on:click={handleClickSearch}>Search</button>
 
 <style>
   @font-face {
